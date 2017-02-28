@@ -1,7 +1,7 @@
 # IOS_CookBook
 
-###UITableViewController
-####Sharing UITableViewCells across multiple UITableViewControllers
+##UITableViewController
+###Sharing UITableViewCells across multiple UITableViewControllers
 1) Create cell UI in a nib file  
 2) Link UI to UITableViewCell subclass  
 3) Add cell's identifier as static let
@@ -23,8 +23,8 @@ override func viewDidLoad() {
 
 ```
 
-###String
-####Concatenation
+##String
+###Concatenation
 ```swift
 var s = "Hello"
 s += " World"
@@ -35,7 +35,7 @@ let w = s + " World"
 let s = "World"
 let w = "Hello \(w)"
 ```
-####Replacing Occurrences
+###Replacing Occurrences
 ```swift
 let s = "Hello World"
 let w = s.replacingOccurrences(of: " ", with: "_")
