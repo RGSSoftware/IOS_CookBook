@@ -88,6 +88,21 @@ for (key, contact) in zip(contacts.keys, contacts.values){
     print("\(key): '\(contact)'")
 }
 ```
+###Filter with Predicate
+```swift
+var customerNameDict = ["firstName":"karthi","LastName":"alagu","MiddleName":"prabhu"];
+var clientNameDict = ["firstName":"Selva","LastName":"kumar","MiddleName":"m"];
+var employeeNameDict = ["firstName":"karthi","LastName":"prabhu","MiddleName":"kp"];
+var attributeValue = "karthi";
+
+var arrNames:Array = [customerNameDict,clientNameDict,employeeNameDict];
+
+
+var namePredicate =
+    NSPredicate(format: "firstName like %@",attributeValue);
+
+let filteredArray = arrNames.filter { namePredicate.evaluate(with: $0) };
+```
 
 ##Array
 ###Swap values
