@@ -23,6 +23,26 @@ override func viewDidLoad() {
 
 ```
 
+##UIViewController
+###Constructor with storyboard
+```swift
+...
+// Constants for Storyboard/ViewControllers.
+static let storyboardName = "Main"
+static let viewControllerIdentifier = "DetailViewController"
+...
+
+class func detailViewControllerForProduct(_ product: Product) -> DetailViewController {
+	let storyboard = UIStoryboard(name: DetailViewController.storyboardName, bundle: nil)
+
+	let viewController = storyboard.instantiateViewController(withIdentifier: DetailViewController.viewControllerIdentifier) as! DetailViewController
+
+	viewController.product = product
+
+	return viewController
+}
+```
+
 ##String
 ###Concatenation
 ```swift
@@ -74,9 +94,3 @@ for (key, contact) in zip(contacts.keys, contacts.values){
 ```swift
 swap(&s[0], &s[1])
 ```
-
-
-
-
-
-
