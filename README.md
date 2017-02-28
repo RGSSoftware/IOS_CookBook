@@ -22,3 +22,26 @@ override func viewDidLoad() {
 }
 
 ```
+
+###String
+####Concatenation
+```swift
+var s = "Hello"
+s += " World"
+
+let s = "Hello"
+let w = s + " World"
+
+let s = "World"
+let w = "Hello \(w)"
+```
+####Replacing Occurrences
+```swift
+let s = "Hello World"
+let w = s.replacingOccurrences(of: " ", with: "_")
+```
+
+
+
+
+
