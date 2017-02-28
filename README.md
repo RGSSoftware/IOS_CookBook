@@ -33,7 +33,7 @@ let s = "Hello"
 let w = s + " World"
 
 let s = "World"
-let w = "Hello \(w)"
+let w = "Hello \(s)"
 ```
 ###Replacing Occurrences
 ```swift
