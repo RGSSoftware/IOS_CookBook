@@ -51,7 +51,7 @@ public enum Storyboard: String {
   case Backing
   
   public func instantiate<VC: UIViewController>(_ viewController: VC.Type,
-                                                inBundle bundle: Bundle = .framework) -> VC {
+                                                inBundle bundle: Bundle = Bundle.main) -> VC {
     guard
       let vc = UIStoryboard(name: self.rawValue, bundle: Bundle(identifier: bundle.identifier))
         .instantiateViewController(withIdentifier: VC.storyboardIdentifier) as? VC
