@@ -63,7 +63,7 @@ public enum Storyboard: String {
 
 extension UIViewController {
 	public static var storyboardIdentifier: String {
-		String(describing: type(of: self))
+		return String(describing: type(of: self))
 	}
 }
 
