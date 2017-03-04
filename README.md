@@ -24,7 +24,7 @@ override func viewDidLoad() {
 ```
 
 ##UIViewController
-###Constructor with storyboard
+###Constructor with Main storyboard
 ```swift
 ...
 // Constants for Storyboard/ViewControllers.
@@ -41,6 +41,33 @@ class func detailViewControllerForProduct(_ product: Product) -> DetailViewContr
 
 	return viewController
 }
+```
+
+###Constructor with multiple storyboards
+```swift
+public enum Storyboard: String {
+//storyboards
+  case Activity
+  case Backing
+  
+  public func instantiate<VC: UIViewController>(_ viewController: VC.Type,
+                                                inBundle bundle: Bundle = .framework) -> VC {
+    guard
+      let vc = UIStoryboard(name: self.rawValue, bundle: Bundle(identifier: bundle.identifier))
+        .instantiateViewController(withIdentifier: VC.storyboardIdentifier) as? VC
+      else { fatalError("Couldn't instantiate \(VC.storyboardIdentifier) from \(self.rawValue)") }
+
+    return vc
+  }
+}
+
+extension UIViewController {
+	public static var storyboardIdentifier: String {
+		String(describing: type(of: self))
+	}
+}
+
+let controller = Storyboard.Activity.instantiate(SignupViewController.self)
 ```
 
 ##String
