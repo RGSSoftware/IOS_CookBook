@@ -90,13 +90,13 @@ for (key, contact) in zip(contacts.keys, contacts.values){
 ```
 ###Filter with Predicate
 ```swift
-var customer = ["firstName": "karthi", "LastName": "alagu", "MiddleName": "prabhu"]
-var client = ["firstName": "Selva", "LastName": "kumar", "MiddleName": "m"]
-var employee = ["firstName": "karthi", "LastName": "prabhu", "MiddleName": "kp"]
-var contacts = [customer, client, employee]
+let customer = ["firstName": "karthi", "LastName": "alagu", "MiddleName": "prabhu"]
+let client = ["firstName": "Selva", "LastName": "kumar", "MiddleName": "m"]
+let employee = ["firstName": "karthi", "LastName": "prabhu", "MiddleName": "kp"]
+let contacts = [customer, client, employee]
 
-var attributeValue = "karthi"
-var predicate = NSPredicate(format: "firstName like %@", attributeValue)
+let attributeValue = "karthi"
+let predicate = NSPredicate(format: "firstName like %@", attributeValue)
 
 let filtered = contacts.filter { predicate.evaluate(with: $0) }
 ```
