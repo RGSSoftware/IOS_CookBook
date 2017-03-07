@@ -283,7 +283,7 @@ for (i, contact) in contacts.enumerated(){
 
 ###Enumerate Dictionary and Set with key and value
 ```swift
-for (key, contact) in zip(contacts.keys, contacts.values){
+for (key, contact) in contacts {
     print("\(key): '\(contact)'")
 }
 ```
