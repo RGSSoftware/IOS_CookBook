@@ -271,7 +271,7 @@ do {
 	}
 ```
 
-##Check verson
+##Check verison
 ```swift
 if #available(iOS 10.0. *) {
 	print("iOS > 10.0")
