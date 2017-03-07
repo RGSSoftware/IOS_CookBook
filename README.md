@@ -231,6 +231,53 @@ extension UIViewController {
 let controller = Storyboard.Activity.instantiate(SignupViewController.self)
 ```
 
+##Error Handling Try Catch
+```swift
+public enum LoginError: LocalizedError {
+    case genericFailure
+    case invalidUsername
+    case invalidPassword
+    
+    public var errorDescription: String? {
+        switch self {
+        case .genericFailure:
+            return .Generic_Failure()
+        case .invalidUsername:
+            return .Login_Invalid_Username_Error()
+        case .invalidPassword:
+            return .Login_Invalid_Password_Error()
+        }
+    }
+}
+
+func loginWith(password: String, username: String) throws -> String {
+    throw LoginError.genericFailure
+}
+
+do {
+		_ = try loginWith(password: "", username: "")
+	} catch let error where error is LoginError {
+		switch error {
+		case LoginError.invalidUsername:
+		print("username")
+		case LoginError.invalidPassword:
+		print("password")
+		default:()  
+		}
+		print(error.localizedDescription)
+	} catch let error {
+		print("base")
+		print(error.localizedDescription)
+	}
+```
+
+##Check verson
+```swift
+if #available(iOS 10.0. *) {
+	print("iOS > 10.0")
+}
+```
+
 ##Localized String
 ```swift
 extension String {
