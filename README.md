@@ -1,7 +1,7 @@
 # IOS_CookBook
 
 ##Share Styles
-1) Create UI placement in storyboard or nib
+1) Create UI placement in storyboard or nib  
 2) Style UI element programmatically
 ```swift
 extension UIButton {
