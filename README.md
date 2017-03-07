@@ -1,5 +1,30 @@
 # IOS_CookBook
 
+##Share Styles
+1) Create UI placement in storyboard or nib
+2) Style UI element programmatically
+```swift
+extension UIButton {
+    public static func greenButtonStyle(_ button: UIButton) {
+        button.setTitleColor(.white, for: .normal)
+        button.setBackgroundColor(.blue, forState: .normal)
+        
+        button.setTitleColor(.white, for: .highlighted)
+        button.setBackgroundColor(.blue, forState: .highlighted)
+        
+        button.setTitleColor(.white, for: .disabled)
+        button.setBackgroundColor(.blue, forState: .disabled)
+        
+        button.layer.borderColor = UIColor.green.cgColor
+        button.layer.borderWidth = 1.0
+        
+        button.titleLabel?.text = .All_Art_Projects()
+    }
+}
+
+@IBOutlet fileprivate weak var viewMessagesButton: UIButton!
+UIButton.greenButtonStyle(viewMessagesButton)
+```
 ##UITableViewController
 ###Sharing UITableViewCells across multiple UITableViewControllers
 1) Create cell UI in a nib file  
