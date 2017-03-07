@@ -70,6 +70,17 @@ extension UIViewController {
 let controller = Storyboard.Activity.instantiate(SignupViewController.self)
 ```
 
+##Localized String
+```swift
+extension String {
+    public static func All_Art_Projects() -> String {
+        return NSLocalizedString("All_Art_Projects", comment: "All_Art_Projects")
+    }
+}
+
+button.titleLabel?.text = .All_Art_Projects()
+```
+
 ##String
 ###Concatenation
 ```swift
