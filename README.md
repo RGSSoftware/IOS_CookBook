@@ -1,6 +1,14 @@
 # IOS_CookBook
 
-##Share Styles
+## Dropshadow
+```swift
+$0.layer.shadowColor = UIColor.blackColor().CGColor
+$0.layer.shadowOffset = CGSize(width: 0, height: 2)
+$0.layer.shadowOpacity = 0.2
+$0.layer.shadowRadius = 1
+```
+
+## Share Styles
 1) Create UI placement in storyboard or nib  
 2) Style UI element programmatically
 ```swift
@@ -26,7 +34,7 @@ extension UIButton {
 UIButton.greenButtonStyle(viewMessagesButton)
 ```
 
-##Share Color
+## Share Color
 ```swift
 extension UIColor {
   /// 0x25CB68
@@ -66,7 +74,7 @@ public extension UIColor {
   }
 }
 ```
-##Share Font
+## Share Font
 ```swift
 import UIKit
 
@@ -161,8 +169,8 @@ button.titleLabel?.font = .ksr_body()
 label.font = .ksr_title1(size: 22)
 ```
 
-##UITableViewController
-###Sharing UITableViewCells across multiple UITableViewControllers
+## UITableViewController
+### Sharing UITableViewCells across multiple UITableViewControllers
 1) Create cell UI in a nib file  
 2) Link UI to UITableViewCell subclass  
 3) Add cell's identifier as static let
@@ -184,8 +192,8 @@ override func viewDidLoad() {
 
 ```
 
-##UIViewController
-###Constructor with Main storyboard
+## UIViewController
+### Constructor with Main storyboard
 ```swift
 ...
 // Constants for Storyboard/ViewControllers.
@@ -204,7 +212,7 @@ class func detailViewControllerForProduct(_ product: Product) -> DetailViewContr
 }
 ```
 
-###Constructor with multiple storyboards
+### Constructor with multiple storyboards
 ```swift
 public enum Storyboard: String {
 //storyboards
@@ -231,7 +239,7 @@ extension UIViewController {
 let controller = Storyboard.Activity.instantiate(SignupViewController.self)
 ```
 
-##Error Handling Try Catch
+## Error Handling Try Catch
 ```swift
 public enum LoginError: LocalizedError {
     case genericFailure
@@ -271,14 +279,14 @@ do {
 	}
 ```
 
-##Check verison
+## Check verison
 ```swift
 if #available(iOS 10.0. *) {
 	print("iOS > 10.0")
 }
 ```
 
-##Localized String
+## Localized String
 ```swift
 extension String {
     public static func All_Art_Projects() -> String {
@@ -289,8 +297,8 @@ extension String {
 button.titleLabel?.text = .All_Art_Projects()
 ```
 
-##String
-###Concatenation
+## String
+### Concatenation
 ```swift
 var s = "Hello"
 s += " World"
@@ -301,40 +309,40 @@ let w = s + " World"
 let s = "World"
 let w = "Hello \(s)"
 ```
-####Add separator between each element
+#### Add separator between each element
 ```swift
 let cast = ["Vivien", "Marlon", "Kim", "Karl"]
 let list = cast.joined(separator: ", ")
 print(list)
 // Prints "Vivien, Marlon, Kim, Karl"
 ```
-###Replacing Occurrences
+### Replacing Occurrences
 ```swift
 let s = "Hello World"
 let w = s.replacingOccurrences(of: " ", with: "_")
 ```
 
-##Collection
-###Remove object
+## Collection
+### Remove object
 ```swift
 if let index = contacts.index(of: contact){
 	contacts.remove(at:index)
 }
 ```
-###Enumerate Array with index and value
+### Enumerate Array with index and value
 ```swift
 for (i, contact) in contacts.enumerated(){
 	print("\(i): '\(contact)'")
 }
 ```
 
-###Enumerate Dictionary and Set with key and value
+### Enumerate Dictionary and Set with key and value
 ```swift
 for (key, contact) in contacts {
     print("\(key): '\(contact)'")
 }
 ```
-###Filter with Predicate
+### Filter with Predicate
 ```swift
 let customer = ["firstName": "karthi", "LastName": "alagu", "MiddleName": "prabhu"]
 let client = ["firstName": "Selva", "LastName": "kumar", "MiddleName": "m"]
@@ -347,8 +355,8 @@ let predicate = NSPredicate(format: "firstName like %@", attributeValue)
 let filtered = contacts.filter { predicate.evaluate(with: $0) }
 ```
 
-##Array
-###Swap values
+## Array
+### Swap values
 ```swift
 swap(&s[0], &s[1])
 ```
