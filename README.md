@@ -1,5 +1,10 @@
 # IOS_CookBook
 
+## Readonly Property
+```swift
+private(set) var alarmDate: NSDate?
+```
+
 ## Dropshadow
 ```swift
 $0.layer.shadowColor = UIColor.blackColor().CGColor
